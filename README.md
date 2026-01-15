@@ -1,4 +1,14 @@
+How to Run the Project
+
+```bash
+git clone https://github.com/Cre8ive-collins/dentifindTest
+cd practice-summary
+npm install
+npm run dev
+```
+
 Approach, Code Quality & Decision-Making
+
 1. Component & Styling Decisions
 
 Component structure:
