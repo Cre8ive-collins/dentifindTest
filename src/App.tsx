@@ -4,8 +4,6 @@ import PracticeSummaryCard from './component/PracticeSummaryCard'
 import { practices } from './data'
 
 function App() {
-
-
   return (
     <div className=' grid md:grid-cols-3 grid-cols-1 gap-5 p-5'>
       {
@@ -27,5 +25,5 @@ function App() {
     </div>
   )
 }
-
 export default App
+ 

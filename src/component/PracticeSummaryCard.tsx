@@ -13,8 +13,11 @@ const PracticeSummaryCard = ({
     spend
 }: IPracticeSummary) => {
     const status = getStatus(conversionRate)
+    
     return (
         <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-xl transition hover:border-blue-500">
+
+
             {/* Header */}
             <div className="mb-4 flex items-center justify-between">
                 <div>
@@ -67,7 +70,7 @@ const PracticeSummaryCard = ({
                 </ul>
             </div>
 
-
+            {/* TrendChart */}
             <TrendChart data={monthlyTrend} />
 
         </div >
