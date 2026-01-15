@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+Approach, Code Quality & Decision-Making
+1. Component & Styling Decisions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Component structure:
 
-Currently, two official plugins are available:
+Main PracticeSummaryCard handles layout, metrics, status, and recommendation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Smaller reusable components like TrendChart for the 6-month trend, making it modular and easy to reuse.
 
-## React Compiler
+Styling approach:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tailwind CSS for fast, responsive styling without writing custom CSS.
 
-## Expanding the ESLint configuration
+Utility classes ensure consistent spacing, typography, and hover states.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Visual consistency & responsiveness:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Used consistent mb spacing between sections, text-sm/text-lg for hierarchy.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Cards are responsive using grid/flex and flex-1 for bars in trend chart.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Hover states for card shadow and bar tooltip added to improve UX.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Scaling & Real-World Use
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Integration into dashboard:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Can be reused in a grid or list view for multiple practices.
+
+Subcomponents like TrendChart allow for theming or data updates without changing main card.
+
+Easy to integrate with a design system by replacing Tailwind colors with design tokens.
+
+If I had one extra day:
+
+Add accessibility improvements (ARIA labels, keyboard hover for tooltip).
+
+Smooth animations for trend chart bars.
+
+Unit tests for components.
+
+Theming support & localization for multi-country dashboards.
+
+3. Time Management
+
+Setup: 10–15 minutes (Vite + Tailwind + folder structure)
+
+Layout & structure: 30–40 minutes (card skeleton + grid + trend chart)
+
+Styling & polish: 45–50 minutes (spacing, colors, hover, tooltip, responsiveness)
+
+README/explanation: 10–15 minutes
